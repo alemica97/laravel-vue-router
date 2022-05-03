@@ -3,6 +3,13 @@
 
 @section('content')
 
+    <div class="container py-3">
+        <form>
+            <a href="{{ route('admin.posts.create') }}">
+                <input type="button" class="btn btn-primary" value="Create a new post">
+            </a>
+        </form>
+    </div>
     <div class="container">
         @foreach ($posts as $post)
             <h1>{{ $post->title }}</h1>

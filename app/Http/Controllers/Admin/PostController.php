@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -37,7 +37,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //scrivo le validazioni dei dati del form
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required',
+            'cover' => 'nullable|url',
+            'published_at' => 'nullable|before_or_equal:today',
+        ]);
     }
 
     /**
