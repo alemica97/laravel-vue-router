@@ -11,11 +11,34 @@
         </form>
     </div>
     <div class="container">
-        @foreach ($posts as $post)
-            <h1>{{ $post->title }}</h1>
-            <p>{{ $post->content }}</p>      
-            <span>Published at: {{ $post->published_at }}</span>  
-        @endforeach
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Published at</th>
+                <th scope="col">Created at</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody>       
+                  @foreach ($posts as $post)
+                  <tr>
+                    <th>{{ $post->id }}</th>
+                    <td>{{ $post->title }}</td>
+                    <td>{{ $post->slug }}</td>
+                    <td>{{ $post->published_at }}</td>
+                    <td>{{ $post->created_at }}</td>
+                    <td>
+                        <a class="btn btn-warning" href="{{ route('admin.posts.edit', $post->id ) }}">Edit post</a>
+                    </td>
+
+                  </tr>
+                  @endforeach            
+            </tbody>
+          </table>
     </div>
+
 
 @endsection
