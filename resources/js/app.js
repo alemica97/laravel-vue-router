@@ -30,3 +30,18 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+const buttons = document.querySelectorAll('.btn [type="submit"]');
+
+buttons.forEach( el => {
+    el.addEventListener('click', function(e){
+        e.preventDefault();
+
+        const btn = e.target; 
+        const form = btn.closest('.btn');
+
+        if( form && confirm('Sei sicuro di voler eliminare questo elemento?') ){
+            form.submit();
+        }
+    })
+});
