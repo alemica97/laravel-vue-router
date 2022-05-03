@@ -44,6 +44,8 @@ class PostController extends Controller
             'cover' => 'nullable|url',
             'published_at' => 'nullable|before_or_equal:today',
         ]);
+
+        
     }
 
     /**
