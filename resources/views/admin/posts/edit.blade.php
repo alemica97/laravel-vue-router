@@ -42,8 +42,16 @@
                 @enderror
             </div>
 
+            <div class="container">
+                <button type="submit" class="btn btn-primary">Create post</button>
 
-              <button type="submit" class="btn btn-primary">Create post</button>
+                <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="btn btn-danger m-3">Delete</button>
+                </form>
+            </div>
 
         </form>
     </div>
