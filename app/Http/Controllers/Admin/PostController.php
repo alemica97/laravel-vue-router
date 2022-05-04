@@ -104,9 +104,9 @@ class PostController extends Controller
         // controllo che il titolo attuale è diverso da quello che ci arriva 
         if( $post->title != $data['title'] ){
             $slug = Post::getUniqueSlug( $data['title'] );
+            $data['slug'] = $slug;
         }
 
-        $data['slug'] = $slug;
         $post->update( $data );
 
         return redirect()->route('admin.posts.index');
