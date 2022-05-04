@@ -11,7 +11,7 @@
         </form>
     </div>
     <div class="container">
-        <table class="table">
+        <table class="table table-striped table-bordered">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -21,6 +21,7 @@
                 <th scope="col">Published at</th>
                 <th scope="col">Created at</th>
                 <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
               </tr>
             </thead>
             <tbody>       
@@ -34,15 +35,16 @@
                     <td>{{ $post->published_at }}</td>
                     <td>{{ $post->created_at }}</td>
                     <td>
-                        <a class="btn btn-warning" href="{{ route('admin.posts.edit', $post->id ) }}">Edit post</a>
+                        <a class="btn btn-warning" href="{{ route('admin.posts.edit', $post->id ) }}">Edit</a>
+                    </td>
+                    <td>
                         <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger m-3">Delete</button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </td>
-
 
                   </tr>
                   @endforeach            

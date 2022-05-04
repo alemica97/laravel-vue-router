@@ -2,6 +2,10 @@
 
 @section('content')
     
+    <div class="container py-4">
+        <h1>Edit this post</h1>
+    </div>
+
     <div class="container">
         <form action="{{ route('admin.posts.update', $post->id ) }}" method="POST">
             @csrf
@@ -57,8 +61,8 @@
                 @enderror
             </div>
 
-            <div class="container">
-                <button type="submit" class="btn btn-primary">Create post</button>
+            <div class="container px-0 py-3">
+                <button type="submit" class="btn btn-primary px-4">Edit post</button>
 {{-- 
                 <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                     @csrf

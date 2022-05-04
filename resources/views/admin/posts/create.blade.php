@@ -2,6 +2,10 @@
 
 @section('content')
     
+    <div class="container py-4">
+        <h1>Create a new post</h1>
+    </div>
+
     <div class="container">
         <form action="{{ route('admin.posts.store') }}" method="POST">
             @csrf
@@ -55,8 +59,9 @@
                 @enderror
             </div>
 
-
-              <button type="submit" class="btn btn-primary">Create post</button>
+            <div class="container px-0 py-3">
+                <button type="submit" class="btn btn-primary px-4">Create post</button>
+            </div>
 
         </form>
     </div>
