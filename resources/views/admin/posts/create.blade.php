@@ -21,12 +21,13 @@
                   <option value="">-- nessuna selezione --</option>
                   @foreach ($categories as $category)
                         {{-- nel value metto l'id di categories che fa riferimento a category_id in post  --}}
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option {{ old('category_id') && old('category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
                   @endforeach
                 </select>
                 @error('category_id')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
+            </div>
             {{-- content --}}
             <div class="form-group">
                 <label for="content">Content</label>

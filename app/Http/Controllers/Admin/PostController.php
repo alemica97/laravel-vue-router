@@ -17,7 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at','desc')
+        // tramite il metodo with faccio in modo che basti fare una sola query per le join con la tabella categories
+        $posts = Post::with('category')
+            ->orderBy('created_at','desc')
             ->get();
         return view('admin.posts.index', compact('posts'));
     }
@@ -29,7 +31,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+        // prendo tutte le categorie dalla tabella categories 
+        $categories = Category::orderBy('name', 'asc')
+            ->get();
         return view('admin.posts.create', compact('categories'));
     }
 
@@ -82,7 +86,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::orderBy('name', 'asc')
+            ->get();
+        return view('admin.posts.edit', compact('post','categories'));
     }
 
     /**
@@ -100,6 +106,7 @@ class PostController extends Controller
             'content' => 'required',
             'cover' => 'nullable|url',
             'published_at' => 'nullable|before_or_equal:today',
+            'category_id' => 'nullable|exists:categories,id',
         ]);
 
         $data = $request->all();

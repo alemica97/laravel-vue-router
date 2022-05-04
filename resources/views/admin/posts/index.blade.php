@@ -17,6 +17,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Slug</th>
+                <th scope="col">Category</th>
                 <th scope="col">Published at</th>
                 <th scope="col">Created at</th>
                 <th scope="col">Edit</th>
@@ -28,6 +29,8 @@
                     <th>{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->slug }}</td>
+                    {{-- Se esiste una categoria nello specifico post, allora stampa il nome della categoria  --}}
+                    <td>{{ $post->category ? $post->category->name : 'no category' }}</td>
                     <td>{{ $post->published_at }}</td>
                     <td>{{ $post->created_at }}</td>
                     <td>
