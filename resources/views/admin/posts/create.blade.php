@@ -13,6 +13,16 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            {{-- select category --}}
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select categoty</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
             {{-- content --}}
             <div class="form-group">
                 <label for="content">Content</label>
