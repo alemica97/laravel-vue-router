@@ -34,6 +34,17 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            {{-- tags --}}
+            <span class="mb-3">Tags:</span>
+            <div class="d-flex">
+                @foreach($tags as $tag)
+                    <div class="form-group form-check">
+                        {{-- Se la collection ($post->tags) contiene $tag allora metti 'checked' --}}
+                        <input type="checkbox" {{ $post->tags->contains( $tag ) ? 'checked' : ''}} class="form-check-input" value="{{$tag->id}}" name="tag[]" id="tags-{{$tag->id}}">
+                        <label class="form-check-label" for="tags-{{$tag->id}}">{{$tag->name}}</label>
+                    </div>
+                @endforeach
+            </div>
             {{-- content --}}
             <div class="form-group">
                 <label for="content">Content</label>

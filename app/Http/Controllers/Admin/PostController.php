@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Post;
 use App\Category;
+use App\Tag;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -88,7 +89,10 @@ class PostController extends Controller
     {
         $categories = Category::orderBy('name', 'asc')
             ->get();
-        return view('admin.posts.edit', compact('post','categories'));
+        $tags = Tag::orderBy('name','asc')
+            ->get();
+
+        return view('admin.posts.edit', compact('post','categories','tags'));
     }
 
     /**
@@ -107,14 +111,22 @@ class PostController extends Controller
             'cover' => 'nullable|url',
             'published_at' => 'nullable|before_or_equal:today',
             'category_id' => 'nullable|exists:categories,id',
+            'tags' => 'exists:tags,id',
         ]);
 
         $data = $request->all();
 
+        // dd($data);
         // controllo che il titolo attuale è diverso da quello che ci arriva 
         if( $post->title != $data['title'] ){
             $slug = Post::getUniqueSlug( $data['title'] );
             $data['slug'] = $slug;
+        }
+
+        if( array_key_exists('tags', $data)){ //se esiste 'tags' nell'array $data
+            $post->$tags()->sync( $data['tags'] );
+        }else{
+            $post->tags()->sync([]);
         }
 
         $post->update( $data );
