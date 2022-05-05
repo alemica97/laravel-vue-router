@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         // tramite il metodo with faccio in modo che basti fare una sola query per le join con la tabella categories
-        $posts = Post::with('category')
+        $posts = Post::with(['category','tags'])
             ->orderBy('created_at','desc')
             ->get();
         return view('admin.posts.index', compact('posts'));
