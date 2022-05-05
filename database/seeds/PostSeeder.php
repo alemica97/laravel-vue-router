@@ -1,6 +1,8 @@
 <?php
 
 use App\Post;
+use App\Category;
+use App\Tag;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
@@ -14,6 +16,12 @@ class PostSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $categories = Category::all();
+        $categoriesId = $categories->pluck('id')->all(); //ritorna un array con gli id di categories
+
+        $tags = Tag::all();
+        $tagsId = $tags->pluck('id')->all();
+
         for ($i=0; $i < 100; $i++) { 
 
             $post = new Post();
@@ -21,8 +29,13 @@ class PostSeeder extends Seeder
             $post->slug = Str::slug( $post->title, '-' );
             $post->content = $faker->paragraphs(10, true);
             $post->published_at = $faker->optional()->dateTime;//$faker->randomElement( [null, $faker->dateTime] );
+            $post->category_id = $faker->optional()->randomElement( $categoriesId );
+
+            $randomTags = $faker->randomElements( $tagsId, 2 );
 
             $post->save();
+
+            $post->tags()->attach( $randomTags ); //attach va fatto dopo il metodo save()
         }
     }
 }
