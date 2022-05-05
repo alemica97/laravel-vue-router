@@ -31,6 +31,8 @@
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->slug }}</td>
                     {{-- Se esiste una categoria nello specifico post, allora stampa il nome della categoria  --}}
+                    {{-- qui category fa riferimento alla relazione nel model Post (Post.php riga 39), ovvero il metodo category(),
+                    category-> si aspetta una parametro es. ('category->name'), category()-> si aspetta un metodo per la relazione es.( category()->attach()) --}}
                     <td>{{ $post->category ? $post->category->name : 'no category' }}</td>
                     <td>{{ $post->published_at }}</td>
                     <td>{{ $post->created_at }}</td>
