@@ -30,12 +30,15 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Post $post)
     {
         // prendo tutte le categorie dalla tabella categories 
         $categories = Category::orderBy('name', 'asc')
             ->get();
-        return view('admin.posts.create', compact('categories'));
+        //Prendo tutti itag dalla tabella tags
+        $tags = Tag::orderBy('name', 'asc')
+            ->get();
+        return view('admin.posts.create', compact('post','categories','tags'));
     }
 
     /**
@@ -53,6 +56,7 @@ class PostController extends Controller
             'cover' => 'nullable|url',
             'published_at' => 'nullable|before_or_equal:today',
             'category_id' => 'nullable|exists:categories,id',
+            'tags' => 'nullable|exists:tags,id',
         ]);
 
         $data = $request->all();
@@ -62,8 +66,13 @@ class PostController extends Controller
         $post = new Post();
         $post->fill( $data );
         $post->slug = $slug;
-
         $post->save();
+
+        // dd($data['tags']);
+        if( array_key_exists('tags', $data)){ //se esiste 'tags' nell'array $data
+            $post->tags()->attach( $data['tags'] );
+        }
+
         // dd($post);
         return redirect()->route('admin.posts.index');
     }
@@ -91,7 +100,7 @@ class PostController extends Controller
             ->get();
         $tags = Tag::orderBy('name','asc')
             ->get();
-
+        // dd($tags);
         return view('admin.posts.edit', compact('post','categories','tags'));
     }
 
@@ -124,7 +133,7 @@ class PostController extends Controller
         }
 
         if( array_key_exists('tags', $data)){ //se esiste 'tags' nell'array $data
-            $post->$tags()->sync( $data['tags'] );
+            $post->tags()->sync( $data['tags'] );
         }else{
             $post->tags()->sync([]);
         }

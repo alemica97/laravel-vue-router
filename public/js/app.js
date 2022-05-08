@@ -49796,14 +49796,15 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
-var buttons = document.querySelectorAll('.btn [type="submit"]');
+var buttons = document.querySelectorAll('.delete-post-btn');
 buttons.forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
     var btn = e.target;
-    var form = btn.closest('.btn');
+    var form = btn.parentNode;
 
     if (form && confirm('Sei sicuro di voler eliminare questo elemento?')) {
+      console.log(form);
       form.submit();
     }
   });
@@ -49943,8 +49944,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\laravel-one-to-many\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\laravel-one-to-many\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\laravel-many-to-many\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\laravel-many-to-many\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

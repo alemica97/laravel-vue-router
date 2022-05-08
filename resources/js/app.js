@@ -31,16 +31,16 @@ const app = new Vue({
     el: '#app',
 });
 
-const buttons = document.querySelectorAll('.btn [type="submit"]');
+const buttons = document.querySelectorAll('.delete-post-btn');
 
 buttons.forEach( el => {
     el.addEventListener('click', function(e){
         e.preventDefault();
-
+        
         const btn = e.target; 
-        const form = btn.closest('.btn');
-
-        if( form && confirm('Sei sicuro di voler eliminare questo elemento?') ){
+        const form = btn.parentNode;
+        if(form && confirm('Sei sicuro di voler eliminare questo elemento?')) {
+            console.log(form)
             form.submit();
         }
     })
