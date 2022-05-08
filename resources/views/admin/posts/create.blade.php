@@ -35,11 +35,14 @@
             {{-- tags --}}
             <span class="mb-3">Tags:</span>
             <div class="d-flex">
-                @foreach($tags as $tag)
+                @foreach($tags as $i => $tag)
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" value="{{$tag->id}}" name="tags[]" id="tags-{{$tag->id}}">
+                        <input type="checkbox" class="form-check-input @error('tags.{{$i}}') is-invalid @enderror" value="{{$tag->id}}" name="tags[{{$i}}]" id="tags-{{$tag->id}}">
                         <label class="form-check-label" for="tags-{{$tag->id}}">{{$tag->name}}</label>
                     </div>
+                    @error('tags.{{$i}}')
+                        <span class="alert alert-danger">{{ $message }}</span>
+                    @enderror
                 @endforeach
             </div>
             {{-- content --}}

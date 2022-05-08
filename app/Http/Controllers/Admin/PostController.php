@@ -56,7 +56,10 @@ class PostController extends Controller
             'cover' => 'nullable|url',
             'published_at' => 'nullable|before_or_equal:today',
             'category_id' => 'nullable|exists:categories,id',
-            'tags' => 'nullable|exists:tags,id',
+            'tags.*' => 'nullable|exists:tags,id',
+        ],
+        [
+            'tags.*.exists'=> '- Invalid checkbox!'
         ]);
 
         $data = $request->all();
@@ -120,7 +123,10 @@ class PostController extends Controller
             'cover' => 'nullable|url',
             'published_at' => 'nullable|before_or_equal:today',
             'category_id' => 'nullable|exists:categories,id',
-            'tags' => 'exists:tags,id',
+            'tags.*' => 'nullable|exists:tags,id', //con * si fa la validazione per ogni checkbox (specifica)
+        ],
+        [
+            'tags.*.exists'=> '- Invalid checkbox!'
         ]);
 
         $data = $request->all();
