@@ -10972,3 +10972,8 @@ a.text-dark:focus {
   font-weight: 600;
 }
 
+.tags-container {
+  display: flex;
+  gap: 20px;
+}
+

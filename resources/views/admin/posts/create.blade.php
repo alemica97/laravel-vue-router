@@ -34,7 +34,7 @@
             </div>
             {{-- tags --}}
             <span class="mb-3">Tags:</span>
-            <div class="d-flex">
+            <div class="tags-container">
                 @foreach($tags as $i => $tag)
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input @error('tags.{{$i}}') is-invalid @enderror" value="{{$tag->id}}" name="tags[{{$i}}]" id="tags-{{$tag->id}}">

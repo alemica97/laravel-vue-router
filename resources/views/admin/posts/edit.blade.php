@@ -36,7 +36,7 @@
             </div>
             {{-- tags --}}
             <span class="mb-3">Tags:</span>
-            <div class="d-flex">
+            <div class="tags-container">
                 @foreach($tags as $i => $tag)
                     <div class="form-group form-check">
                         {{-- Se la collection ($post->tags) contiene $tag allora metti 'checked' --}}
