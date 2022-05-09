@@ -1,13 +1,17 @@
 <template>
     <div class="container">
-        <div v-for="post in posts" :key="post.id">
-            {{ post.title }}
-        </div>
+        <PostCard v-for="post in posts" :key="post.id" :post="post"/>
     </div>
 </template>
 
 <script>
+import PostCard from '../components/PostCard.vue'
+
 export default {
+
+    components: {
+        PostCard,
+    },
 
     data() {
         return{
