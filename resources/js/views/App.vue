@@ -1,12 +1,26 @@
 <template>
   <div>
-      App.vue
+      <header>
+          <nav>
+              navbar
+          </nav>
+      </header>
+
+      <PostsGrid />
+
+      <footer>
+          footer
+      </footer>
   </div>
 </template>
 
 <script>
-export default {
+import PostsGrid from './Posts.index.vue'
 
+export default {
+    components: {
+        PostsGrid,
+    }
 }
 </script>
 
