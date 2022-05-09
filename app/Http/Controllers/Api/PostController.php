@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::with(['category','tags'])
+            ->where('published_at','!=','null') //prendo solo i post che sono stati pubblicati
+            ->orderBy('published_at','desc')
+            ->get();
+            
+        return response()->json([
+            'posts' => $posts,
+        ]);
     }
 
     /**
