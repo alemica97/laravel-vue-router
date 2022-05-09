@@ -28,6 +28,7 @@ class PostSeeder extends Seeder
             $post->title = ucfirst($faker->words(8, true));
             $post->slug = Str::slug( $post->title, '-' );
             $post->content = $faker->paragraphs(10, true);
+            $post->cover = 'https://picsum.photos/350/350';
             $post->published_at = $faker->optional()->dateTime;//$faker->randomElement( [null, $faker->dateTime] );
             $post->category_id = $faker->optional()->randomElement( $categoriesId );
 

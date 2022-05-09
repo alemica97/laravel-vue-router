@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app bg-neutral-900 text-white">
       <header>
           <nav>
               navbar
@@ -25,5 +25,9 @@ export default {
 </script>
 
 <style long="scss" socped>
+
+.app{
+    min-height: 100vh;
+}
 
 </style>
