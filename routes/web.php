@@ -29,3 +29,9 @@ Route::middleware('auth')
     Route::resource('posts','PostController');
 });
 
+// Creo una rotta di fallback che restiturà sempre la rotta indicata nel caso in cui 
+// non dovesse trovare la rotta admin/...
+
+route::get('{any}', function(){
+    return view('guest.home');
+})->where('any','.*');
