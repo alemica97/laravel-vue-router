@@ -26,7 +26,7 @@ export default {
             .then( res => {
                 // console.log(res.data.posts);
                 this.posts = res.data.posts;
-                // console.log(this.posts);
+                console.log(this.posts);
             })
             .catch( err => {
                 console.warn(err);
