@@ -12,8 +12,11 @@
  window.Vue = require('vue');
 
 import App from './views/App.vue';
+// importo l'istanza router esportata da index.js 
+import router from './router';
 
  const app = new Vue({
     el: '#root',
-    render: h => h(App)
+    render: h => h(App),
+    router,
 });

@@ -1,5 +1,8 @@
 <template>
-    <div class="post-card rounded-md bg-slate-600 p-5">
+
+    <router-link class="post-card rounded-md bg-slate-600 p-5 cursor-pointer"
+        tag="div"
+        :to="{ name:'posts.show', params: { slug: post.slug } }">
         <figure class="post-card-img rounded-md overflow-hidden mb-6">
             <img :src="post.cover" alt="" class="w-full object-cover">
         </figure>
@@ -18,7 +21,8 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </router-link>
+
 </template>
 
 <script>
@@ -34,5 +38,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .post-card{
+        &:hover{
+            background-color: #637388;
+            transform: translateY(-2%);
+            transition: all 600ms;
+
+                .post-card-img{
+                    img{
+                        transform: scale(1.3, 1.3);
+                        transition: all 1s;
+                    }
+                }
+        }
+    }
 
 </style>
