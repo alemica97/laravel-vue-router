@@ -1,15 +1,15 @@
 <template>
   <div class="app bg-neutral-900 text-white">
-      <header class="bg-slate-600">
+      <header class="bg-slate-600/90 fixed w-full z-10">
           <div class="container flex justify-between items-center px-6 py-4">
             <h1 class="header-title">Boolpress</h1>
             <nav>
-                <ul class="flex justify-end gap-5">
+                <ul class="flex justify-end gap-5 text-lg">
                     <!-- uso router-link per creare dei link alle rotte create in index.js -->
-                    <li>
+                    <li class="opacity-60 hover:opacity-100">
                         <router-link :to="{name:'posts.index'}">Posts</router-link>
                     </li>
-                    <li>
+                    <li class="opacity-60 hover:opacity-100">
                         <router-link :to="{name:'contact'}">Contact</router-link>
                     </li>
                 </ul>
@@ -21,8 +21,10 @@
         <!-- per visualizzare il componente relativo alla rotta -->
         <router-view></router-view>
 
-      <footer>
-          footer
+      <footer class="bg-slate-900">
+          <div class="container p-6">
+              <span>Boolpress - Boolean©️</span>
+          </div>
       </footer>
   </div>
 </template>

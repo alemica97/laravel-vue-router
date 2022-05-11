@@ -1,16 +1,16 @@
 <template>
     <div>
         
-        <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 px-6 py-20">
+        <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 px-6 pb-10 pt-44">
             <PostCard v-for="post in posts" :key="post.id" 
                 :post="post"/>
         </div>
         <div class="container">
-            <ul class="flex gap-5 justify-center items-center">
+            <ul class="flex gap-5 justify-center items-center pb-10">
                 <li v-for="n in lastPage" :key="n" 
                     @click="fetchPostsData(n)"
                     :class="[ currentPage === n ? 'bg-amber-600' : 'bg-slate-600','pageLink p-4 rounded-full h-8 w-8 flex items-center justify-center cursor-pointer']">
-                    {{ n }}
+                    <span class="opacity-60 hover:opacity-100">{{ n }}</span>
                 </li>
             </ul>
         </div>
