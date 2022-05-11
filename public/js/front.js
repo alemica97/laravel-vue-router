@@ -2039,9 +2039,41 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Posts.show.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\resources\\js\\pages\\Posts.show.vue: Unexpected token, expected \",\" (26:4)\n\n\u001b[0m \u001b[90m 24 |\u001b[39m     \u001b[90m//     }\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m     \u001b[90m// }\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     mounted() {\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 27 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39m$route)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 29 |\u001b[39m }\u001b[0m\n    at instantiate (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:358:12)\n    at Parser.raise (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:3335:19)\n    at Parser.unexpected (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:3373:16)\n    at Parser.expect (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:4002:28)\n    at Parser.parseObjectLike (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:13486:14)\n    at Parser.parseExprAtom (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12890:23)\n    at Parser.parseExprSubscripts (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12540:23)\n    at Parser.parseUpdate (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12519:21)\n    at Parser.parseMaybeUnary (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12490:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12284:61)\n    at Parser.parseExprOps (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12291:23)\n    at Parser.parseMaybeConditional (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12261:23)\n    at Parser.parseMaybeAssign (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12214:21)\n    at C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12172:39\n    at Parser.allowInAnd (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:14236:16)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:12172:17)\n    at Parser.parseExportDefaultExpression (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:15907:22)\n    at Parser.parseExport (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:15795:31)\n    at Parser.parseStatementContent (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:14649:27)\n    at Parser.parseStatement (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:14533:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:15176:25)\n    at Parser.parseBlockBody (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:15167:10)\n    at Parser.parseProgram (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:14451:10)\n    at Parser.parseTopLevel (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:14438:25)\n    at Parser.parse (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:16401:10)\n    at parse (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\parser\\lib\\index.js:16453:38)\n    at parser (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\core\\lib\\parser\\index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:87:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\@babel\\core\\lib\\transform.js:25:41)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\alex-\\ProgettiBooleanCLI\\laravel-vue-router\\node_modules\\gensync\\index.js:261:32)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      post: null
+    };
+  },
+  methods: {
+    fetchSlugPost: function fetchSlugPost() {
+      var _this = this;
+
+      axios.get("/api/posts/".concat(this.$route.params.slug)).then(function (res) {
+        console.log(res);
+        _this.post = res.data.post;
+      })["catch"](function (err) {
+        console.warn(err);
+      });
+    }
+  },
+  beforeMount: function beforeMount() {
+    this.fetchSlugPost();
+  }
+});
 
 /***/ }),
 
@@ -3452,9 +3484,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._v("\n    Pagina show post per: "),
-    _c("br"),
-    _vm._v("\n    " + _vm._s(_vm.$route.params.slug) + "\n"),
+    _vm.post ? _c("h1", [_vm._v(_vm._s(_vm.post.title))]) : _vm._e(),
   ])
 }
 var staticRenderFns = []

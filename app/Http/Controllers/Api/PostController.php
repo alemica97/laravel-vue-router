@@ -54,7 +54,7 @@ class PostController extends Controller
      */
     public function show($slug)  //qui ci arriverà uno slug
     {
-        // prendo il primo post dove lo slug che arriva alla show è uguale a slug
+        // prendo il primo con lo slug uguale allo slug che arriva alla show
         $post = Post::with(['category','tags'])
             ->where('slug', $slug)
             ->first();
