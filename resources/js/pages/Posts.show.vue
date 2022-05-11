@@ -7,6 +7,11 @@
 
 <script>
 export default {
+    data() {
+        return { 
+            post: null,
+        }
+    }
     // beforeMount() {
     //     fetchSlugPost();
     // },

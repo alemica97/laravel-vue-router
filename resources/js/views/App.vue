@@ -1,8 +1,8 @@
 <template>
   <div class="app bg-neutral-900 text-white">
       <header class="bg-slate-600">
-          <div class="container flex justify-between items-center p-6">
-            <h1>Boolpress</h1>
+          <div class="container flex justify-between items-center px-6 py-4">
+            <h1 class="header-title">Boolpress</h1>
             <nav>
                 <ul class="flex justify-end gap-5">
                     <!-- uso router-link per creare dei link alle rotte create in index.js -->
@@ -43,4 +43,9 @@ export default {
     min-height: 100vh;
 }
 
+.header-title{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
 </style>

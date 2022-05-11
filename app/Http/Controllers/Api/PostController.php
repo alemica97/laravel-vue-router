@@ -52,9 +52,24 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)  //qui ci arriverà uno slug
     {
-        //
+        // prendo il primo post dove lo slug che arriva alla show è uguale a slug
+        $post = Post::with(['category','tags'])
+            ->where('slug', $slug)
+            ->first();
+
+        if( $post ){
+            return response()->json([
+                'post' => $post,
+                'succes' => true,
+            ]);
+        }
+        // Se il post non dovesse essere trovato, verrà dato un errore 404
+        return response()->json([
+            'post' => 'Post not found',
+            'success' => false,
+        ],404);
     }
 
     /**
