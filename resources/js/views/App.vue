@@ -1,6 +1,6 @@
 <template>
   <div class="app bg-neutral-900 text-white">
-      <header class="bg-slate-600/90 fixed w-full z-10">
+      <header class="bg-slate-600/95 fixed w-full z-10">
           <div class="container flex justify-between items-center px-6 py-4">
             <h1 class="header-title">Boolpress</h1>
             <nav>

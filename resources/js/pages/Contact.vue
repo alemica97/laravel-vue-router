@@ -1,6 +1,8 @@
 <template>
-  <div>
-      pagina dei contatti
+  <div class="contact pt-44">
+    <div class="container px-6">
+        pagina dei contatti
+    </div>
   </div>
 </template>
 
@@ -11,5 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .contact{
+    min-height: 100vh;
+  }
 </style>

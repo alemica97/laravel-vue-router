@@ -1,10 +1,5 @@
 <template>
-    <div>
-        <!-- Pagina show post per: <br>
-        {{ $route.params.slug }} -->
-        <!-- <figure class="jumbo-image">
-            <img :src="post.cover" alt="">
-        </figure> -->
+    <div v-if="post">
         <template>
             <div :style="{backgroundImage:`url(${post.cover})`}"
             class="jumbo-image"> <!-- prendo l'immagine dal backend -->
@@ -14,7 +9,8 @@
             <div class="container px-6 py-20">
             <h1 v-if="post" class="post-title text-5xl">{{ post.title }}</h1>
             <p class="pt-8 opacity-80">{{ post.content }}</p>
-            <p class="text-lg pt-10">Category: {{ post.category.name }}</p>
+            <p class="text-lg pt-10" v-if="post.category">Category: {{ post.category.name }}</p>
+            <p v-else class="text-lg pt-10">Category: <span class="line-through">No category</span></p>
             <ul class="pt-10 flex gap-4">
                 <li v-for="tag in post.tags" :key="tag.id"
                     class="py-1 px-5 rounded-full bg-amber-600">
@@ -37,7 +33,7 @@ export default {
         fetchSlugPost() {
             axios.get(`/api/posts/${ this.$route.params.slug }`)
             .then( res => {
-                console.log(res);
+                console.log(res.data.post);
                 this.post = res.data.post;
 
             })
