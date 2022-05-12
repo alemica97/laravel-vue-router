@@ -1,6 +1,5 @@
 <template>
-    <div>
-        
+    <div class="wrapper">    
         <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 px-6 pb-10 pt-44">
             <PostCard v-for="post in posts" :key="post.id" 
                 :post="post"/>
@@ -61,5 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .wrapper{
+        min-height: calc(100vh - 80px);
+    }
 </style>

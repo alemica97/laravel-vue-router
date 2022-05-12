@@ -1,5 +1,5 @@
 <template>
-    <div v-if="post">
+    <div v-if="post" class="wrapper">
         <template>
             <div :style="{backgroundImage:`url(${post.cover})`}"
             class="jumbo-image"> <!-- prendo l'immagine dal backend -->
@@ -39,6 +39,8 @@ export default {
             })
             .catch( err => {
                 console.warn( err );
+                //redirect error 404
+                this.$router.push('/404');
             });
         }
     },
@@ -49,6 +51,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    .wrapper{
+        min-height: calc(100vh - 80px);
+    }
 
     .jumbo-image{
         height: 600px;

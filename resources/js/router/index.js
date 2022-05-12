@@ -7,6 +7,7 @@ Vue.use(VueRouter);
 import Posts from '../pages/Posts.index.vue';
 import Contact from '../pages/Contact.vue';
 import ShowPost from '../pages/Posts.show.vue';
+import PageNotFound from '../pages/404.vue';
 //creo un array di rotte che conterranno path, name e component
 const routes = [
     {
@@ -23,6 +24,10 @@ const routes = [
         path: '/posts/:slug',  //path con parametro, in questo caso slug
         name: 'posts.show',
         component: ShowPost,
+    },
+    {
+        path: '/*',  //recupera tutte le rotte diverse da quelle non definite
+        component: PageNotFound,
     }
 ];
 

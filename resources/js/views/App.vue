@@ -21,8 +21,8 @@
         <!-- per visualizzare il componente relativo alla rotta -->
         <router-view></router-view>
 
-      <footer class="bg-slate-900">
-          <div class="container p-6">
+      <footer class="boolpress-footer bg-slate-900 flex items-center">
+          <div class="container px-6">
               <span>Boolpress - Boolean©️</span>
           </div>
       </footer>
@@ -49,5 +49,9 @@ export default {
     font-size: 35px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.boolpress-footer{
+    height: 80px;
 }
 </style>
